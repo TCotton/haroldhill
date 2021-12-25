@@ -1,10 +1,9 @@
 module.exports = {
   plugins: [
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-styled-components',
     {
-      resolve: "gatsby-theme-amaranth",
-      options: {},
-    },
-
-  ],
-};
+      resolve: 'gatsby-theme-amaranth',
+      options: {}
+    }
+  ]
+}
