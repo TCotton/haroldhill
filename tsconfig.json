@@ -28,7 +28,7 @@
     "strict": false,
     "strictBindCallApply": false,
     "strictFunctionTypes": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "strictPropertyInitialization": false,
     "useUnknownInCatchVariables": false,
     "noImplicitAny": true,
@@ -45,6 +45,7 @@
     "skipLibCheck": false,
     "removeComments": false,
     "preserveConstEnums": true,
-    "noEmit": true
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
   }
 }

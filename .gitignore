@@ -4,6 +4,8 @@ logs
 *.log
 npm-debug.log*
 .idea/
+.husky/
+.husky
 
 # Runtime data
 pids

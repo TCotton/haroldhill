@@ -32,7 +32,13 @@ module.exports = {
         ts: 'never',
         tsx: 'never'
       }
-    ]
+    ],
+    'no-use-before-define': [
+      'error',
+      { functions: false, classes: false, variables: false }
+    ],
+    'node/no-missing-import': 0,
+    'node/no-unsupported-features/es-syntax': 0
   },
   overrides: [
     {
