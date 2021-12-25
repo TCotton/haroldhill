@@ -9480,6 +9480,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-prettier-standard@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "eslint-config-prettier-standard@npm:4.0.1"
+  peerDependencies:
+    eslint-config-prettier: ">=5.0.0"
+    eslint-config-standard: ">=16.0.0"
+    eslint-plugin-prettier: ">=3.1.0"
+    prettier-config-standard: ">=1.0.0"
+  checksum: aa87c4d7a241abdda72b623173a7aa52bb5cd3bbdcb4f9dbfe10b5338cc2855ec1b164c8e1f6d217fb25f7256d66433b7bf719bb91461f51fe4d97c500330c17
+  languageName: node
+  linkType: hard
+
 "eslint-config-prettier@npm:^8.3.0":
   version: 8.3.0
   resolution: "eslint-config-prettier@npm:8.3.0"
@@ -9514,6 +9526,27 @@ __metadata:
     eslint-plugin-testing-library:
       optional: true
   checksum: b265852455b1c10e9c5f0cebe199306fffc7f8e1b6548fcb0bccdc4415c288dfee8ab10717122a32275b91130dfb482dcbbc87d2fb79d8728d4c2bfa889f0915
+  languageName: node
+  linkType: hard
+
+"eslint-config-standard-typescript-prettier@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "eslint-config-standard-typescript-prettier@npm:4.2.0"
+  dependencies:
+    "@types/eslint": ^7.2.6
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^4.15.2
+    "@typescript-eslint/parser": ^4.15.2
+    eslint: ^7.21.0
+    eslint-config-prettier: ^8.1.0
+    eslint-config-standard: ^16.0.2
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-node: ^11.1.0
+    eslint-plugin-prettier: ^3.3.1
+    eslint-plugin-promise: ^4.3.1
+    eslint-plugin-standard: ^5.0.0
+    prettier: ^2.2.1
+  checksum: a46a89a3d73a338e003a6fcf21142c03c8ea0fa6996ed07463ae6093f81d12250a494047917985ac217e137246eed11eec4870d9ae154d6f359296cffd0244ac
   languageName: node
   linkType: hard
 
@@ -9661,6 +9694,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-jest@npm:^25.3.0":
+  version: 25.3.0
+  resolution: "eslint-plugin-jest@npm:25.3.0"
+  dependencies:
+    "@typescript-eslint/experimental-utils": ^5.0.0
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^4.0.0 || ^5.0.0
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    "@typescript-eslint/eslint-plugin":
+      optional: true
+    jest:
+      optional: true
+  checksum: d801c166f528392fbb0234e34b893e97c24a7be049744f2d23b1702bce6202d5f0760886a591f884ffa82c7e01a2b06134e86da991bfa568ca5a90311e5f452e
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-jsx-a11y@npm:^6.4.1":
   version: 6.4.1
   resolution: "eslint-plugin-jsx-a11y@npm:6.4.1"
@@ -9703,6 +9753,15 @@ __metadata:
   peerDependencies:
     eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
   checksum: ead5c5be3ded82a0cf295b064376adb1998a43e2262b605eecc0efc88283dec4e159ca39307fafb3d8e661dd08e5a4c8cdfed97eea78f923954f72bad6e20397
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-react-hooks@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "eslint-plugin-react-hooks@npm:4.3.0"
+  peerDependencies:
+    eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+  checksum: 0ba1566ba0780bbc75a5921f49188edf232db2085ab32c8d3889592f0db9d6fadc97fcf639775e0101dec6b5409ca3c803ec44213b90c8bacaf0bdf921871c2e
   languageName: node
   linkType: hard
 
@@ -11678,16 +11737,16 @@ __metadata:
     cypress: ^8.6.0
     cypress-axe: ^0.13.0
     eslint: ^7.32.0
-    eslint-config-airbnb: ^18.2.1
-    eslint-config-airbnb-typescript: ^14.0.1
     eslint-config-prettier: ^8.3.0
+    eslint-config-prettier-standard: ^4.0.1
+    eslint-config-standard-typescript-prettier: ^4.2.0
     eslint-plugin-import: ^2.25.2
-    eslint-plugin-jest: ^25.2.2
+    eslint-plugin-jest: ^25.3.0
     eslint-plugin-jest-dom: ^3.9.2
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-prettier: ^4.0.0
     eslint-plugin-react: ^7.26.1
-    eslint-plugin-react-hooks: ^4.2.0
+    eslint-plugin-react-hooks: ^4.3.0
     eslint-plugin-testing-library: ^4.12.4
     gatsby: ^4.0.0
     gatsby-cypress: ^2.0.0

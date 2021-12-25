@@ -5,5 +5,6 @@ module.exports = {
       resolve: "gatsby-theme-amaranth",
       options: {},
     },
+
   ],
 };
