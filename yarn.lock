@@ -9550,6 +9550,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-config-standard@npm:^16.0.3":
+  version: 16.0.3
+  resolution: "eslint-config-standard@npm:16.0.3"
+  peerDependencies:
+    eslint: ^7.12.1
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-node: ^11.1.0
+    eslint-plugin-promise: ^4.2.1 || ^5.0.0
+  checksum: 6ae193634f289ae95dbbf2291dc1e7c5bedef2425c594db07ec58476c902e6eb51a2b1c9cd2bad3772e921f5515dc2f8fb5447f7a56c20c99801ef1296c3bfef
+  languageName: node
+  linkType: hard
+
 "eslint-import-resolver-node@npm:^0.3.6":
   version: 0.3.6
   resolution: "eslint-import-resolver-node@npm:0.3.6"
@@ -9744,6 +9756,15 @@ __metadata:
     eslint-config-prettier:
       optional: true
   checksum: 03d69177a3c21fa2229c7e427ce604429f0b20ab7f411e2e824912f572a207c7f5a41fd1f0a95b9b8afe121e291c1b1f1dc1d44c7aad4b0837487f9c19f5210d
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-promise@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "eslint-plugin-promise@npm:6.0.0"
+  peerDependencies:
+    eslint: ^7.0.0 || ^8.0.0
+  checksum: 7e761507c51267b77e4ad710e7c8938aa4f8f69b975886034e57497a1816e9527eda364e25aac03d1b4e0df2e738ba98e49ad075d028824fcfea533a1419751c
   languageName: node
   linkType: hard
 
@@ -11739,12 +11760,14 @@ __metadata:
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-config-prettier-standard: ^4.0.1
+    eslint-config-standard: ^16.0.3
     eslint-config-standard-typescript-prettier: ^4.2.0
     eslint-plugin-import: ^2.25.2
     eslint-plugin-jest: ^25.3.0
     eslint-plugin-jest-dom: ^3.9.2
     eslint-plugin-jsx-a11y: ^6.4.1
     eslint-plugin-prettier: ^4.0.0
+    eslint-plugin-promise: ^6.0.0
     eslint-plugin-react: ^7.26.1
     eslint-plugin-react-hooks: ^4.3.0
     eslint-plugin-testing-library: ^4.12.4
@@ -11757,6 +11780,7 @@ __metadata:
     jest-styled-components: ^7.0.5
     markdownlint-cli2: ^0.3.2
     prettier: ^2.4.1
+    prettier-config-standard: ^4.0.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-query: ^3.28.0
@@ -20775,6 +20799,13 @@ __metadata:
   version: 2.0.0
   resolution: "prepend-http@npm:2.0.0"
   checksum: 7694a9525405447662c1ffd352fcb41b6410c705b739b6f4e3a3e21cf5fdede8377890088e8934436b8b17ba55365a615f153960f30877bf0d0392f9e93503ea
+  languageName: node
+  linkType: hard
+
+"prettier-config-standard@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "prettier-config-standard@npm:4.0.0"
+  checksum: f72ef5858cf7330275be6dafe650b7a0a66736c134c67b17a1c5d8c737c8c7f04ff831f73f6ce9ab289832b75400da3cc8aad44e9fc94238142a8170dfa613dc
   languageName: node
   linkType: hard
 
