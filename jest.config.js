@@ -1,10 +1,10 @@
-const baseConfig = require("./test/jest.config.base");
+const baseConfig = require('./test/jest.config.base')
 
 module.exports = {
   ...baseConfig,
   testPathIgnorePatterns: [
     ...baseConfig.testPathIgnorePatterns,
-    "<rootDir>/themes",
-    "<rootDir>/examples",
-  ],
-};
+    '<rootDir>/themes',
+    '<rootDir>/examples'
+  ]
+}
