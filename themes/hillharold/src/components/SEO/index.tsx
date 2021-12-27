@@ -1,14 +1,13 @@
-/*
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
 
 import { Post } from '../../types'
 
-import GeneralTags from './General'
-import OpenGraphTags from './OpenGraph'
-import RichSearchTags from './RichSearch'
-import TwitterTags from './Twitter'
-import { generatePostData, generateSeoData } from './Utils'
+import GeneralTags from './general'
+import OpenGraphTags from './opengraph'
+import RichSearchTags from './richsearch'
+import TwitterTags from './twitter'
+import { generatePostData, generateSeoData } from './utils'
 import { useConfig } from '../../config'
 
 type SeoProps = {
@@ -43,4 +42,3 @@ const SEO = ({ post }: SeoProps): JSX.Element => {
 }
 
 export default SEO
- */

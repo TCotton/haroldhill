@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   ignorePatterns: [
     '**/public/**',
     '**/.cache/**',
@@ -63,9 +64,9 @@ module.exports = {
       ],
       rules: {
         'react/require-default-props': 'off',
-        'react/prop-types': 'off'
+        'react/prop-types': 'off',
+        'no-use-before-define': 0
       },
-
       parser: '@typescript-eslint/parser',
       parserOptions: {
         tsconfigRootDir: __dirname,
@@ -79,7 +80,9 @@ module.exports = {
         es6: true
       },
       extends: [],
-      rules: {},
+      rules: {
+        'no-use-before-define': 0
+      },
       plugins: [
         'testing-library',
         'react',

@@ -14532,7 +14532,6 @@ __metadata:
     lodash: ^4.17.21
     markdownlint-cli2: ^0.3.2
     memfs: ^3.4.0
-    moment: ^2.29.1
     netlify-cms-app: ^2.15.62
     prettier: ^2.5.1
     prism-themes: ^1.9.0
