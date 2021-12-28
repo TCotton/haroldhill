@@ -1,116 +1,47 @@
 import React from 'react'
-import {
-  RichSearchTag,
-  PostData,
-  SeoData,
-  JsonLdAuthorMetadata,
-  JsonLdOrganizationMetadata,
-  JsonLdArticleMetadata
-} from './types'
 
-import { UserData, OrganizationData } from '../../config'
-
-export const getAuthorMetadata = (
-  userData: UserData
-): JsonLdAuthorMetadata => ({
-  '@type': 'Person',
-  givenName: userData.firstName,
-  familyName: userData.lastName,
-  email: userData.email,
-  address: userData.location
-})
-
-export const generateOrganizationMetadata = (
-  orgData: OrganizationData
-): JsonLdOrganizationMetadata => {
-  const { url, logoUrl, description, name } = orgData
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    url,
-    name,
-    description,
-    logo: logoUrl
-  }
-}
-
-export const generateArticleMetadata = (
-  postData: PostData,
-  orgData?: OrganizationData,
-  userData?: UserData
-): JsonLdArticleMetadata | null => {
-  const {
-    title,
-    description,
-    coverImageUrl,
-    datePublished,
-    dateModified,
-    category,
-    tags,
-    body,
-    url
-  } = postData
-
-  const orgMetaData = orgData
-    ? generateOrganizationMetadata(orgData)
-    : undefined
-  const authorData = userData ? getAuthorMetadata(userData) : undefined
-
-  if (!coverImageUrl || !description) return null
-
-  return {
-    '@context': 'http://schema.org',
-    '@type': 'BlogPosting',
-    image: coverImageUrl,
-    url,
-    headline: title,
-    name: title,
-    description,
-    dateCreated: datePublished,
-    datePublished,
-    dateModified,
-    author: authorData,
-    creator: authorData,
-    publisher: orgMetaData,
-    mainEntityOfPage: 'True',
-    keywords: tags,
-    articleSection: category,
-    articleBody: body
-  }
-}
+import { SeoData, TwitterTagList } from './types'
+import { UserData, WebsiteData } from '../../config'
 
 type SeoArgs = {
   seoData: SeoData
-  postData?: PostData
   userData?: UserData
-  orgData?: OrganizationData
+  websiteData: WebsiteData
 }
 
-const RichSearchResultTags = ({
+const TwitterTags = ({
   seoData,
-  postData,
   userData,
-  orgData
-}: SeoArgs): RichSearchTag[] => {
-  const { isArticle } = seoData
+  websiteData
+}: SeoArgs): TwitterTagList => {
+  const { title, description, imageUrl, imageAlt } = seoData
+  const userTwitterName = userData?.twitterName
+  const siteTwitterName = websiteData.twitterName
 
-  const articleJsonLd =
-    isArticle && postData
-      ? generateArticleMetadata(postData, orgData, userData)
-      : undefined
+  const tagList: TwitterTagList = []
 
-  const orgJsonLd = orgData ? generateOrganizationMetadata(orgData) : undefined
+  // This function acts as a type guard to prevent undefined content from being added
+  const addTag = (name: string, content: string) => {
+    tagList.push(<meta name={name} content={content} />)
+  }
 
-  const jsonLdData = isArticle ? articleJsonLd : orgJsonLd
+  addTag('twitter:card', 'summary_large_image')
+  addTag('twitter:title', title)
 
-  return jsonLdData
-    ? [
-        <script key="rich-search" type="application/ld+json">
-          {JSON.stringify(jsonLdData)}
-        </script>
-      ]
-    : []
+  if (description) addTag('twitter:description', description)
+
+  if (imageUrl) addTag('twitter:image', imageUrl)
+
+  addTag('twitter:image:alt', imageAlt)
+
+  if (userTwitterName) addTag('twitter:creator', userTwitterName)
+
+  if (siteTwitterName) addTag('twitter:site', siteTwitterName)
+
+  return tagList.map((tag) => ({
+    ...tag,
+    key: tag.props.name
+  }))
 }
 
-export default RichSearchResultTags
+export default TwitterTags

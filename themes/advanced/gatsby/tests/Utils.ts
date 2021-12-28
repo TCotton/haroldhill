@@ -1,4 +1,4 @@
-import { Actions } from "gatsby";
+import { Actions } from 'gatsby'
 
 // eslint-disable-next-line import/prefer-default-export
 export const GatsbyActionsMock = {
@@ -23,5 +23,5 @@ export const GatsbyActionsMock = {
   addThirdPartySchema: jest.fn(),
   createTypes: jest.fn(),
   createFieldExtension: jest.fn(),
-  printTypeDefinitions: jest.fn(),
-} as Actions;
+  printTypeDefinitions: jest.fn()
+} as unknown as Actions

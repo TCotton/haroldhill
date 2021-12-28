@@ -60,7 +60,7 @@ export const generateArticleMetadata = (
   if (!coverImageUrl || !description) return null
 
   return {
-    '@context': 'http://schema.org',
+    '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     image: coverImageUrl,
     url,

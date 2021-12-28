@@ -41,7 +41,7 @@ export type JsonLdOrganizationMetadata = {
 }
 
 export type JsonLdArticleMetadata = {
-  '@context': 'http://schema.org'
+  '@context': 'https://schema.org'
   '@type': 'BlogPosting'
   mainEntityOfPage: 'True'
   image: string
