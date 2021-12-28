@@ -1,5 +1,4 @@
 /* eslint "no-console": "off" */
-
 import path from 'path'
 import fs from 'fs'
 
