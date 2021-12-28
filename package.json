@@ -33,7 +33,7 @@
     "lint:format": "prettier-standard --check  'src/**/*.{js,jsx,ts,tsx,css}'",
     "lint:all": "npm run lint:js && npm run lint:styles && npm run lint:format && npm run lint:md",
     "test": "jest",
-    "type-check": "tsc --noEmit",
+    "type-check": "tsc --noEmit --skipLibCheck" ,
     "type-check:watch": "npm run type-check -- --watch",
     "cy:open:dev": "CYPRESS_STAGE=dev CYPRESS_BASE_URL=http://localhost:8000 cypress open",
     "cy:open": "cypress open",
