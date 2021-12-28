@@ -1,8 +1,11 @@
 import isAbsoluteUrl from 'is-absolute-url'
 import { SiteConfig } from './types'
+import defaultConfig from './defaultConfig'
 
 // Validate
-const validateSiteConfig = (config: SiteConfig): Readonly<SiteConfig> => {
+const validateSiteConfig = (
+  config: SiteConfig = defaultConfig
+): Readonly<SiteConfig> => {
   const newConfig = config
   // Make sure pathPrefix is empty if not needed
   if (newConfig.pathPrefix === '/') {

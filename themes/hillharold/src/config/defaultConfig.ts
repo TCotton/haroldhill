@@ -1,6 +1,6 @@
 import { SiteConfig } from './types'
 
-const config: SiteConfig = {
+const defaultConfig: SiteConfig = {
   // Website configuration
   website: {
     title: "Harold Hill: A Peoples' History", // Homepage title
@@ -39,4 +39,4 @@ const config: SiteConfig = {
   basePath: undefined // Base path for mounting pages. Allows for multiple themes to be used in a single website.
 }
 
-export default config
+export default defaultConfig
