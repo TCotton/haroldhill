@@ -1,39 +1,39 @@
-import React from "react";
+import React from 'react'
 import {
   RichSearchTag,
   PostData,
   SeoData,
   JsonLdAuthorMetadata,
   JsonLdOrganizationMetadata,
-  JsonLdArticleMetadata,
-} from "./types";
+  JsonLdArticleMetadata
+} from './types'
 
-import { UserData, OrganizationData } from "../../config";
+import { UserData, OrganizationData } from '../../config'
 
 export const getAuthorMetadata = (
   userData: UserData
 ): JsonLdAuthorMetadata => ({
-  "@type": "Person",
+  '@type': 'Person',
   givenName: userData.firstName,
   familyName: userData.lastName,
   email: userData.email,
-  address: userData.location,
-});
+  address: userData.location
+})
 
 export const generateOrganizationMetadata = (
   orgData: OrganizationData
 ): JsonLdOrganizationMetadata => {
-  const { url, logoUrl, description, name } = orgData;
+  const { url, logoUrl, description, name } = orgData
 
   return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
     url,
     name,
     description,
-    logo: logoUrl,
-  };
-};
+    logo: logoUrl
+  }
+}
 
 export const generateArticleMetadata = (
   postData: PostData,
@@ -49,19 +49,19 @@ export const generateArticleMetadata = (
     category,
     tags,
     body,
-    url,
-  } = postData;
+    url
+  } = postData
 
   const orgMetaData = orgData
     ? generateOrganizationMetadata(orgData)
-    : undefined;
-  const authorData = userData ? getAuthorMetadata(userData) : undefined;
+    : undefined
+  const authorData = userData ? getAuthorMetadata(userData) : undefined
 
-  if (!coverImageUrl || !description) return null;
+  if (!coverImageUrl || !description) return null
 
   return {
-    "@context": "http://schema.org",
-    "@type": "BlogPosting",
+    '@context': 'http://schema.org',
+    '@type': 'BlogPosting',
     image: coverImageUrl,
     url,
     headline: title,
@@ -73,44 +73,44 @@ export const generateArticleMetadata = (
     author: authorData,
     creator: authorData,
     publisher: orgMetaData,
-    mainEntityOfPage: "True",
+    mainEntityOfPage: 'True',
     keywords: tags,
     articleSection: category,
-    articleBody: body,
-  };
-};
+    articleBody: body
+  }
+}
 
 type SeoArgs = {
-  seoData: SeoData;
-  postData?: PostData;
-  userData?: UserData;
-  orgData?: OrganizationData;
-};
+  seoData: SeoData
+  postData?: PostData
+  userData?: UserData
+  orgData?: OrganizationData
+}
 
 const RichSearchResultTags = ({
   seoData,
   postData,
   userData,
-  orgData,
+  orgData
 }: SeoArgs): RichSearchTag[] => {
-  const { isArticle } = seoData;
+  const { isArticle } = seoData
 
   const articleJsonLd =
     isArticle && postData
       ? generateArticleMetadata(postData, orgData, userData)
-      : undefined;
+      : undefined
 
-  const orgJsonLd = orgData ? generateOrganizationMetadata(orgData) : undefined;
+  const orgJsonLd = orgData ? generateOrganizationMetadata(orgData) : undefined
 
-  const jsonLdData = isArticle ? articleJsonLd : orgJsonLd;
+  const jsonLdData = isArticle ? articleJsonLd : orgJsonLd
 
   return jsonLdData
     ? [
         <script key="rich-search" type="application/ld+json">
           {JSON.stringify(jsonLdData)}
-        </script>,
+        </script>
       ]
-    : [];
-};
+    : []
+}
 
-export default RichSearchResultTags;
+export default RichSearchResultTags

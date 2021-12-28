@@ -69,6 +69,6 @@ export const schema = `#graphql
   type SiteSiteMetadata {
     config: SiteConfig!
   }
-`;
+`
 
-export default schema;
+export default schema

@@ -1,65 +1,65 @@
 export interface WebsiteData {
-  title: string;
-  titleShort: string;
-  name: string;
-  description: string;
-  language: string;
-  logoUrl: string;
-  fbAppId?: string;
-  twitterName?: string;
-  url: string;
-  copyright: string;
-  rss: string;
-  rssTitle: string;
-  googleAnalyticsId?: string;
-  disqusShortname?: string;
-  themeColor: string;
-  backgroundColor: string;
+  title: string
+  titleShort: string
+  name: string
+  description: string
+  language: string
+  logoUrl: string
+  fbAppId?: string
+  twitterName?: string
+  url: string
+  copyright: string
+  rss: string
+  rssTitle: string
+  googleAnalyticsId?: string
+  disqusShortname?: string
+  themeColor: string
+  backgroundColor: string
 }
 
 export interface UserData {
-  id: string;
-  firstName: string;
-  lastName: string;
-  twitterName?: string;
-  linkedIn?: string;
-  github?: string;
-  email: string;
-  location: string;
-  about: string;
-  avatar: string;
+  id: string
+  firstName: string
+  lastName: string
+  twitterName?: string
+  linkedIn?: string
+  github?: string
+  email: string
+  location: string
+  about: string
+  avatar: string
 }
 
 export interface OrganizationData {
-  name: string;
-  description: string;
-  logoUrl: string;
-  url: string;
+  name: string
+  description: string
+  logoUrl: string
+  url: string
 }
 
 type IconManifest = {
-  src: string;
-  sizes: string;
-  type: string;
-  purpose?: string;
-};
+  src: string
+  sizes: string
+  type: string
+  purpose?: string
+}
 
 export interface SiteConfig {
-  website: WebsiteData;
-  user?: UserData;
-  organization?: OrganizationData;
+  website: WebsiteData
+  user?: UserData
+  organization?: OrganizationData
 
-  pathPrefix: string;
+  pathPrefix: string
 
-  contentDir?: string;
-  assetDir?: string;
+  contentDir?: string
+  assetDir?: string
 
-  embeddedImageWidth: number;
-  embeddedVideoWidth: number;
+  embeddedImageWidth: number
+  embeddedVideoWidth: number
 
-  iconPath?: string;
-  iconList: Readonly<Array<IconManifest>>;
-  iconCachePaths?: string[];
+  iconPath?: string
+  iconList: Readonly<Array<IconManifest>>
+  iconCachePaths?: string[]
 
-  basePath?: string;
+  basePath?: string
 }

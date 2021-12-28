@@ -1,32 +1,32 @@
-import React from "react";
-import { Disqus as DisqusPlugin } from "gatsby-plugin-disqus";
+import React from 'react'
+import { Disqus as DisqusPlugin } from 'gatsby-plugin-disqus'
 
-import { useConfig } from "../../config";
-import { Post } from "../../types";
+import { useConfig } from '../../config'
+import { Post } from '../../types'
 
 type DisqusProps = {
-  post: Post;
-};
+  post: Post
+}
 
 const Disqus = ({ post }: DisqusProps): JSX.Element | null => {
-  const config = useConfig();
+  const config = useConfig()
 
   // Do not render if no shortname was provided
   if (!config.website.disqusShortname) {
-    return null;
+    return null
   }
 
-  const { url, title } = post;
+  const { url, title } = post
 
   return (
     <DisqusPlugin
       config={{
         url,
         identifier: title,
-        title,
+        title
       }}
     />
-  );
-};
+  )
+}
 
-export default Disqus;
+export default Disqus

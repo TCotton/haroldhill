@@ -1,8 +1,8 @@
-import removeMd from "remove-markdown";
+import removeMd from 'remove-markdown'
 
-import { PostData, SeoData } from "./types";
-import { Post } from "../../types";
-import { WebsiteData } from "../../config";
+import { PostData, SeoData } from './types'
+import { Post } from '../../types'
+import { WebsiteData } from '../../config'
 
 // Generate postData from a allMdx edge
 export const generatePostData = (post: Post): PostData => {
@@ -16,15 +16,15 @@ export const generatePostData = (post: Post): PostData => {
     category,
     tags,
     internalContent,
-    excerpt,
-  } = post;
+    excerpt
+  } = post
 
   if (!internalContent)
     throw Error(
       "SEO::generatePostData: Post doesn't contain internal content used for Rich Tags. Aborting."
-    );
+    )
 
-  const body = removeMd(internalContent);
+  const body = removeMd(internalContent)
 
   return {
     title,
@@ -33,25 +33,25 @@ export const generatePostData = (post: Post): PostData => {
     coverImageAlt,
     datePublished,
     dateModified,
-    category: category || "None",
+    category: category || 'None',
     tags: tags || [],
     body,
-    url: post.url,
-  };
-};
+    url: post.url
+  }
+}
 
 // Generate shared SEO metadata
 export const generateSeoData = (
   websiteData: WebsiteData,
   postData?: PostData
 ): SeoData => {
-  const isArticle = !!postData;
-  const title = postData ? postData.title : websiteData.title;
-  const type = postData ? "article" : "website";
-  const imageUrl = postData ? postData.coverImageUrl : websiteData.logoUrl;
-  const imageAlt = postData ? postData.coverImageAlt : websiteData.description;
-  const url = postData ? postData.url : websiteData.url;
-  const description = postData ? postData.description : websiteData.description;
+  const isArticle = !!postData
+  const title = postData ? postData.title : websiteData.title
+  const type = postData ? 'article' : 'website'
+  const imageUrl = postData ? postData.coverImageUrl : websiteData.logoUrl
+  const imageAlt = postData ? postData.coverImageAlt : websiteData.description
+  const url = postData ? postData.url : websiteData.url
+  const description = postData ? postData.description : websiteData.description
 
   return {
     isArticle,
@@ -60,6 +60,6 @@ export const generateSeoData = (
     imageUrl,
     imageAlt,
     url,
-    description,
-  };
-};
+    description
+  }
+}
