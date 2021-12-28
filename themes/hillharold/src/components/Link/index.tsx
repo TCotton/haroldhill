@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 
-import { Link as GatsbyLink } from 'gatsby'
+import { Link as GatsbyLink } from "gatsby";
 
-import { useConfig, withBasePath } from '../../config'
+import { useConfig, withBasePath } from "../../config";
 
 export type LinkProps = {
-  className?: string
-  activeClassName?: string
-  children: React.ReactNode
-  to: string
-  href?: string
-  noBasePath?: boolean
-  ariaLabel?: string
-}
+  className?: string;
+  activeClassName?: string;
+  children: React.ReactNode;
+  to: string;
+  href?: string;
+  noBasePath?: boolean;
+  ariaLabel?: string;
+};
 
 const Link = ({
   to,
@@ -21,30 +21,31 @@ const Link = ({
   children,
   activeClassName,
   noBasePath,
-  ariaLabel
+  ariaLabel,
 }: LinkProps): JSX.Element => {
-  const config = useConfig()
+  const config = useConfig();
 
-  const url = href || to
+  const url = href || to;
 
-  const isInternalUrl = /^\/(?!\/)/.test(url)
+  const isInternalUrl = /^\/(?!\/)/.test(url);
 
   // Append basePath when dealing with internal URLs
-  const internalUrl = !noBasePath ? withBasePath(config, url) : url
+  const internalUrl = !noBasePath ? withBasePath(config, url) : url;
 
   return isInternalUrl ? (
     <GatsbyLink
       activeClassName={activeClassName}
       className={className}
       to={internalUrl}
-      aria-label={ariaLabel}>
+      aria-label={ariaLabel}
+    >
       {children}
     </GatsbyLink>
   ) : (
     <a className={className} href={url} aria-label={ariaLabel}>
       {children}
     </a>
-  )
-}
+  );
+};
 
-export default Link
+export default Link;

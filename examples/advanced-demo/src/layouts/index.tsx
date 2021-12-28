@@ -1,15 +1,15 @@
 // eslint-disable-next-line no-use-before-define
-import * as React from 'react'
+import * as React from "react";
 
-import { SEO } from 'gatsby-theme-advanced'
+import { SEO } from "gatsby-theme-advanced";
 
-import Footer from '../components/Footer'
+import Footer from "../components/Footer";
 
-import './styles.css'
+import "./styles.css";
 
 type MainLayoutProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const MainLayout = ({ children }: MainLayoutProps): JSX.Element => (
   <>
@@ -19,6 +19,6 @@ const MainLayout = ({ children }: MainLayoutProps): JSX.Element => (
       <Footer />
     </div>
   </>
-)
+);
 
-export default MainLayout
+export default MainLayout;

@@ -1,12 +1,12 @@
 /* eslint "no-console": "off" */
 
 // Types
-import { SiteConfig } from '../../src/config'
+import { SiteConfig } from "../../src/config";
 import {
   GatsbyPluginFeedData,
   GatsbyFeedRssMetadata,
-  GatsbyFeedItem
-} from '../types'
+  GatsbyFeedItem,
+} from "../types";
 
 export const getSerialize =
   (config: SiteConfig) =>
@@ -14,21 +14,21 @@ export const getSerialize =
     data: GatsbyPluginFeedData
   ): Array<GatsbyFeedItem | undefined> | undefined => {
     const {
-      query: { allMdx }
-    } = data
+      query: { allMdx },
+    } = data;
 
-    const edges = allMdx?.edges
+    const edges = allMdx?.edges;
 
     if (!edges) {
-      console.warn('No Mdx edges available for feed generation.')
-      return undefined
+      console.warn("No Mdx edges available for feed generation.");
+      return undefined;
     }
 
     const res = edges.map((edge): GatsbyFeedItem | undefined => {
-      const { node } = edge
+      const { node } = edge;
 
-      const slug = node.fields?.slug
-      const url = slug ? config.website.url + slug : config.website.url
+      const slug = node.fields?.slug;
+      const url = slug ? config.website.url + slug : config.website.url;
 
       return {
         categories: node?.frontmatter?.tags,
@@ -38,25 +38,25 @@ export const getSerialize =
         url,
         guid: url,
         custom_elements: [
-          { 'content:encoded': node.html },
-          { author: config.user?.email }
-        ]
-      }
-    })
+          { "content:encoded": node.html },
+          { author: config.user?.email },
+        ],
+      };
+    });
 
-    return res
-  }
+    return res;
+  };
 
 export const setup = (ref: GatsbyPluginFeedData): GatsbyFeedRssMetadata => {
-  const ret = ref.query?.site?.siteMetadata?.rssMetadata
+  const ret = ref.query?.site?.siteMetadata?.rssMetadata;
 
   if (!ret) {
     throw Error(
-      'gatsby-plugin-feed rssMetadata is missing. Aborting feed setup.'
-    )
+      "gatsby-plugin-feed rssMetadata is missing. Aborting feed setup."
+    );
   }
 
-  ret.generator = 'GatsbyJS Advanced Starter'
+  ret.generator = "GatsbyJS Advanced Starter";
 
-  return ret
-}
+  return ret;
+};
