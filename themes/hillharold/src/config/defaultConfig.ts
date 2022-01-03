@@ -26,8 +26,8 @@ const defaultConfig: SiteConfig = {
   // Gatsby Configuration
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 
-  contentDir: undefined, // Directory for MDX posts
-  assetDir: undefined, // Asset directory
+  contentDir: './content', // Directory for MDX posts
+  assetDir: './static', // Asset directory
 
   embeddedImageWidth: 768, // MDX embedded image width. Used by gatsby-plugin-image for optimization
   embeddedVideoWidth: 920, // MDX embedded video width in pixels
@@ -36,7 +36,7 @@ const defaultConfig: SiteConfig = {
   iconList: [], // Icons used for the web manifest. Can be used to override iconPath for a more pixel perfect control.
   iconCachePaths: undefined, // Glob pattern path for the icons to be cached by the gatsby-plugin-offline
 
-  basePath: undefined // Base path for mounting pages. Allows for multiple themes to be used in a single website.
+  basePath: '' // Base path for mounting pages. Allows for multiple themes to be used in a single website.
 }
 
 export default defaultConfig
