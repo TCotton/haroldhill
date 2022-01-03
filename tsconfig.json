@@ -20,7 +20,7 @@
     "lib": ["dom", "es2015", "es2017", "es2019"],
     "allowJs": true,
     "incremental": true,
-    "target": "esnext",
+    "target": "es2015",
     "module": "commonjs",
     "checkJs": true,
     "declaration": true,
