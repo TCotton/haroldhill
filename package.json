@@ -33,7 +33,7 @@
     "lint:format": "prettier-standard --check  'src/**/*.{js,jsx,ts,tsx,css}'",
     "lint:all": "npm run lint:js && npm run lint:styles && npm run lint:format && npm run lint:md",
     "test": "jest",
-    "type-check": "tsc --noEmit --skipLibCheck" ,
+    "type-check": "tsc --noEmit --skipLibCheck",
     "type-check:watch": "npm run type-check -- --watch",
     "cy:open:dev": "CYPRESS_STAGE=dev CYPRESS_BASE_URL=http://localhost:8000 cypress open",
     "cy:open": "cypress open",
@@ -42,7 +42,8 @@
     "test:e2e": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:open",
     "test:e2e:ci": "CYPRESS_SUPPORT=y npm run build && start-server-and-test serve http://localhost:9000 cy:run",
     "write-good": "write-good **/content/*.{md,mdx}",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "preinstall": "npx only-allow yarn"
   },
   "dependencies": {
     "@stylelint/postcss-css-in-js": "^0.37.2",
@@ -91,6 +92,7 @@
     "jest-styled-components": "^7.0.8",
     "lint-staged": "^12.1.4",
     "markdownlint-cli2": "^0.3.2",
+    "only-allow": "^1.0.0",
     "prettier": "^2.5.1",
     "prettier-config-standard": "^4.0.0",
     "prettier-standard": "^16.4.1",

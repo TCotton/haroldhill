@@ -13462,6 +13462,7 @@ __metadata:
     jest-styled-components: ^7.0.8
     lint-staged: ^12.1.4
     markdownlint-cli2: ^0.3.2
+    only-allow: ^1.0.0
     prettier: ^2.5.1
     prettier-config-standard: ^4.0.0
     prettier-standard: ^16.4.1
@@ -21502,6 +21503,18 @@ __metadata:
   dependencies:
     mimic-fn: ^2.1.0
   checksum: 2478859ef817fc5d4e9c2f9e5728512ddd1dbc9fb7829ad263765bb6d3b91ce699d6e2332eef6b7dff183c2f490bd3349f1666427eaba4469fba0ac38dfd0d34
+  languageName: node
+  linkType: hard
+
+"only-allow@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "only-allow@npm:1.0.0"
+  dependencies:
+    boxen: ^4.2.0
+    which-pm-runs: ^1.0.0
+  bin:
+    only-allow: bin.js
+  checksum: 1247ee81c579c0bc5c9e65b1020d0a028e6e80b73514ac2dd20e2892220b5db31b6995c78e60ee953d6b327033008a6fbaa33a265634fef29480fa53949154b2
   languageName: node
   linkType: hard
 
@@ -29587,6 +29600,13 @@ typescript@^4.5.4:
   version: 2.0.0
   resolution: "which-module@npm:2.0.0"
   checksum: 809f7fd3dfcb2cdbe0180b60d68100c88785084f8f9492b0998c051d7a8efe56784492609d3f09ac161635b78ea29219eb1418a98c15ce87d085bce905705c9c
+  languageName: node
+  linkType: hard
+
+"which-pm-runs@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "which-pm-runs@npm:1.0.0"
+  checksum: 30cf7aee31f264558070e92414316c169367bb2b84a0a32777d30392fea0892fcf9955b81c3fe7f52165ae5a33f0acfd3bc0916416cb07e6d414c90255c228ca
   languageName: node
   linkType: hard
 
