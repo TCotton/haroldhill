@@ -106,25 +106,20 @@ export function mdxNodeIntoPost(mdxNode: MdxNode): Post {
 
   return {
     title: frontmatter.title,
-
     description: frontmatter.description,
     coverImg: frontmatter.cover.childImageSharp?.gatsbyImageData,
     coverImageUrl: frontmatter.cover.publicURL,
     coverImageAlt: frontmatter.coverAlt,
-
     datePublished: new Date(frontmatter.datePublished),
     dateModified: new Date(
       frontmatter.dateModified || frontmatter.datePublished
     ),
-
     category: frontmatter.category,
     tags: tagList,
-
     body: mdxNode.body,
     internalContent: mdxNode.internal?.content,
     excerpt: mdxNode.excerpt,
     timeToRead: mdxNode.timeToRead,
-
     slug: mdxNode.fields.slug,
     route: mdxNode.fields.route,
     pathName: mdxNode.fields.pathName,
@@ -175,26 +170,20 @@ export const jsonPostIntoPost = (meta: PostFromJson): Post => {
 
   return {
     title,
-
     description,
     coverImg,
     coverImageUrl,
     coverImageAlt,
-
     datePublished: new Date(datePublished),
     dateModified: new Date(dateModified),
-
     category,
     tags,
-
     excerpt,
     timeToRead,
-
     slug,
     route,
     pathName,
     url,
-
     relatedPosts: relatedPosts ? relatedPosts.map(jsonPostIntoPost) : undefined
   }
 }

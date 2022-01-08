@@ -45,24 +45,18 @@ export const schema = `#graphql
     purpose: String
   }
 
-
   type  SiteConfig {
     website: WebsiteData!
     user: UserData
     organization: OrganizationData
-
     pathPrefix: String!
-
     contentDir: String
     assetDir: String
-
     embeddedImageWidth: Int!
     embeddedVideoWidth: Int!
-
     iconPath: String
     iconList: [IconManifest]!
     iconCachePaths: [String]
-
     basePath: String
   }
 
