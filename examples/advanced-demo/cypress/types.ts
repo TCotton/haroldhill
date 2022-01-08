@@ -1,1 +1,1 @@
-export type ResponseData = { body: string };
+export type ResponseData = { body: string }
