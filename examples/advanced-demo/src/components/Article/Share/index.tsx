@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 import {
   FacebookShareButton,
@@ -12,44 +12,44 @@ import {
   TwitterIcon,
   TelegramIcon,
   LinkedinIcon,
-  RedditIcon,
-} from "react-share";
+  RedditIcon
+} from 'react-share'
 
-import { Types, useConfig } from "gatsby-theme-advanced";
+import { Types, useConfig } from 'gatsby-theme-advanced'
 
-import "./styles.css";
+import './styles.css'
 
 export const countFilter = (count: number): string =>
-  count > 0 ? count.toString() : "";
+  count > 0 ? count.toString() : ''
 
 export const generateRelatedTwitterNames = (
   config: Types.SiteConfig
 ): Array<string> => {
-  const relatedTwitterNames = [];
+  const relatedTwitterNames = []
 
   if (config?.user?.twitterName)
-    relatedTwitterNames.push(config?.user?.twitterName);
+    relatedTwitterNames.push(config?.user?.twitterName)
 
   if (config.website.twitterName)
-    relatedTwitterNames.push(config.website.twitterName);
+    relatedTwitterNames.push(config.website.twitterName)
 
-  return relatedTwitterNames;
-};
+  return relatedTwitterNames
+}
 
 type SocialLinksProps = {
-  post: Types.Post;
-};
+  post: Types.Post
+}
 
 const ShareLinks = ({ post }: SocialLinksProps): JSX.Element => {
-  const config = useConfig();
+  const config = useConfig()
 
-  const { excerpt, title, url } = post;
+  const { excerpt, title, url } = post
 
   const renderShareCount = (count: number) => (
     <div className="share-count">{countFilter(count)}</div>
-  );
+  )
 
-  const relatedTwitterNames = generateRelatedTwitterNames(config);
+  const relatedTwitterNames = generateRelatedTwitterNames(config)
 
   return (
     <div className="social-links">
@@ -63,8 +63,7 @@ const ShareLinks = ({ post }: SocialLinksProps): JSX.Element => {
         url={url}
         title={title}
         via={config.website.name}
-        related={relatedTwitterNames}
-      >
+        related={relatedTwitterNames}>
         <TwitterIcon round size={48} />
       </TwitterShareButton>
       <FacebookShareButton url={url} quote={excerpt}>
@@ -77,15 +76,14 @@ const ShareLinks = ({ post }: SocialLinksProps): JSX.Element => {
         url={url}
         title={title}
         summary={excerpt}
-        source={config.website.name}
-      >
+        source={config.website.name}>
         <LinkedinIcon round size={48} />
       </LinkedinShareButton>
       <TelegramShareButton url={url} title={title}>
         <TelegramIcon round size={48} />
       </TelegramShareButton>
     </div>
-  );
-};
+  )
+}
 
-export default ShareLinks;
+export default ShareLinks

@@ -7,16 +7,14 @@
     "examples/advanced-demo",
     "themes/hillharold"
   ],
-  "name": "gatsby-starter-advanced",
-  "description": "GatsbyJS starter that includes examples for advanced use cases.",
-  "version": "4.0.0",
-  "author": "Ruben Harutyunyan <vagr9k@gmail.com>",
+  "name": "harold-hill",
+  "description": "Website of Harold Hill: A Peoples' History.",
+  "version": "1.0.0",
+  "author": "Andrwe Walpole <me@andywalpole.me>",
   "keywords": [
-    "gatsby",
-    "gatsby-starter",
-    "vagr9k"
+    "gatsby"
   ],
-  "license": "MIT",
+  "license": "CC BY-NC-ND",
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",

@@ -1,38 +1,38 @@
-import React from "react";
+import React from 'react'
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image";
+import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
-import { Link, Types } from "gatsby-theme-advanced";
+import { Link, Types } from 'gatsby-theme-advanced'
 
-import "./styles.css";
+import './styles.css'
 
-type Post = Types.Post;
+type Post = Types.Post
 
 type IntroProps = {
-  post: Post;
-};
+  post: Post
+}
 
 const renderTags = (post: Post): JSX.Element | null => {
-  if (!post.tags) return null;
+  if (!post.tags) return null
 
   const tagList = post.tags.map((tag) => (
     <Link key={tag} to={`/tag/${tag}`}>
       <h2>{tag}</h2>
     </Link>
-  ));
+  ))
 
   return (
     <div className="article-tag-grid ">
       <h2>Tags:</h2>
       {tagList}
     </div>
-  );
-};
+  )
+}
 
 const renderCategory = (post: Post): JSX.Element | null => {
-  const { category } = post;
+  const { category } = post
 
-  if (!category) return null;
+  if (!category) return null
 
   return (
     <div className="category-container">
@@ -41,20 +41,20 @@ const renderCategory = (post: Post): JSX.Element | null => {
         <h2>{category}</h2>
       </Link>
     </div>
-  );
-};
+  )
+}
 
 const Intro = ({ post }: IntroProps): JSX.Element => {
-  const { coverImg } = post;
+  const { coverImg } = post
   if (!coverImg)
-    throw Error("Article: Failed to render Article without cover image.");
+    throw Error('Article: Failed to render Article without cover image.')
 
-  const gatsbyImage = getImage(coverImg);
+  const gatsbyImage = getImage(coverImg)
 
   if (!gatsbyImage)
     throw Error(
-      "Article: Failed to get Gatsby image data from the cover image."
-    );
+      'Article: Failed to get Gatsby image data from the cover image.'
+    )
 
   return (
     <div className="article-intro">
@@ -68,7 +68,7 @@ const Intro = ({ post }: IntroProps): JSX.Element => {
       {renderCategory(post)}
       {renderTags(post)}
     </div>
-  );
-};
+  )
+}
 
-export default Intro;
+export default Intro
