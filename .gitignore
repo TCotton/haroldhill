@@ -6,6 +6,8 @@ npm-debug.log*
 .idea/
 .husky/
 .husky
+.yarn
+.github
 
 # Runtime data
 pids
