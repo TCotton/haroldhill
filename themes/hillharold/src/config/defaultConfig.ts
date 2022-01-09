@@ -26,8 +26,8 @@ const defaultConfig: SiteConfig = {
   // Gatsby Configuration
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
 
-  contentDir: './content', // Directory for MDX posts
-  assetDir: './static', // Asset directory
+  contentDir: undefined, // Directory for MDX posts
+  assetDir: undefined, // Asset directory
 
   embeddedImageWidth: 768, // MDX embedded image width. Used by gatsby-plugin-image for optimization
   embeddedVideoWidth: 920, // MDX embedded video width in pixels

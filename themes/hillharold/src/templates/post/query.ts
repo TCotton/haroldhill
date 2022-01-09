@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import PostTemplate from './index'
 
 const TemplateCompnent = PostTemplate
-
+console.dir('here it is')
 export const PostTemplateQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     mdx(fields: { slug: { eq: $slug } }) {

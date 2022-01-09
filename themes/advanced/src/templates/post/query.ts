@@ -1,8 +1,8 @@
-import { graphql } from "gatsby";
+import { graphql } from 'gatsby'
 
-import PostTemplate from "./index";
+import PostTemplate from './index'
 
-const TemplateCompnent = PostTemplate;
+const TemplateCompnent = PostTemplate
 
 export const PostTemplateQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -36,6 +36,6 @@ export const PostTemplateQuery = graphql`
       }
     }
   }
-`;
+`
 
-export default TemplateCompnent;
+export default TemplateCompnent

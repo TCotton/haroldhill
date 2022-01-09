@@ -48,18 +48,13 @@ export interface SiteConfig {
   website: WebsiteData
   user?: UserData
   organization?: OrganizationData
-
   pathPrefix: string
-
   contentDir?: string
   assetDir?: string
-
   embeddedImageWidth: number
   embeddedVideoWidth: number
-
   iconPath?: string
   iconList: Readonly<Array<IconManifest>>
   iconCachePaths?: string[]
-
   basePath?: string
 }
